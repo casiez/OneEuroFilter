@@ -1,6 +1,7 @@
 # Gery Casiez
 # August 2023
 
+import os
 import math
 import sys
 import pandas
@@ -11,13 +12,17 @@ parser.add_argument('implementation')
 parser.add_argument('filename')
 args = parser.parse_args()
 
+if not(os.path.isfile(args.filename)):
+    print("%s does not exist"%args.filename, file=sys.stderr)
+    sys.exit()
+
 df = pandas.read_csv('groundTruth.csv')
 df2 = pandas.read_csv(args.filename)
 
 problem = False
 
 if df.shape[0] != df2.shape[0]:
-    print("The test file does not have the correct number of lines.")
+    print("The test file does not have the correct number of lines.", file=sys.stderr)
     sys.exit()
 
 for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
@@ -38,4 +43,4 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
 if problem:
     print("Problem with %s checking"%args.implementation, file=sys.stderr)
 else:
-    print("%s implementation looks good."%args.implementation)
+    print("\n>>>>>> %s implementation looks good. <<<<<<\n"%args.implementation)

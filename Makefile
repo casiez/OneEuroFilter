@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-I.
 PYTHON=python3
 
-all: testcplusplus testcplusplusUsingTemplates testc testpython
+all: testcplusplus testcplusplusUsingTemplates testc testpython testJava
 
 # C++ version original
 cplusplus:
@@ -42,3 +42,12 @@ testpython:
 	$(PYTHON) OneEuroFilterTest.py > test.csv ; \
 	cd .. ; \
 	$(PYTHON) test.py python python/test.csv
+
+# Java
+javaVersion:
+	cd java ; \
+	javac Test.java ; \
+	java Test > test.csv ; \
+
+testJava: javaVersion
+	$(PYTHON) test.py java java/test.csv
