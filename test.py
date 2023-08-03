@@ -21,21 +21,21 @@ if df.shape[0] != df2.shape[0]:
     sys.exit()
 
 for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
-    if row['timestamp'] != row2['timestamp']:
-        print("Timestamps are different!")
+    if math.fabs(row['timestamp'] - row2['timestamp']) > 0.0001:
+        print("Timestamps are different : %s != %s"%(row['timestamp'], row2['timestamp']), file=sys.stderr)
         problem = True
         break
-    if row['noisy'] != row2['noisy']:
-        print('noisy data is different!')
+    if math.fabs(row['noisy'] - row2['noisy']) > 0.0001:
+        print("noisy data is different: %s != %s"%(row['noisy'], row2['noisy']), file=sys.stderr)
         problem = True
         break
-    if math.fabs(row['filtered'] - row2['filtered']) > 0.001:
-        print("The filtered value differs from the ground truth.")
+    if math.fabs(row['filtered'] - row2['filtered']) > 0.0001:
+        print("The filtered value differs from the ground truth: %s != %s"%(row['filtered'], row2['filtered']), file=sys.stderr)
         print("Check your parameters or your implementation")
         problem = True
         break
 
 if problem:
-    print("Problem with %s cheching"%args.implementation, file=sys.stderr)
+    print("Problem with %s checking"%args.implementation, file=sys.stderr)
 else:
     print("%s implementation looks good."%args.implementation)

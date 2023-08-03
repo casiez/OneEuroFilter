@@ -1,23 +1,44 @@
-all: testcplusplus testcplusplusUsingTemplates testpython
+CPP=g++
+CC=gcc
+CFLAGS=-I.
+PYTHON=python3
 
+all: testcplusplus testcplusplusUsingTemplates testc testpython
+
+# C++ version original
 cplusplus:
 	cd cpp ; \
-	g++ -o OneEuroFilterCpp OneEuroFilter.cc ; \
+	$(CPP) -o OneEuroFilterCpp OneEuroFilter.cc ; \
 	./OneEuroFilterCpp > test.csv
 
 testcplusplus: cplusplus
-	python3 test.py cpp cpp/test.csv
+	$(PYTHON) test.py cpp cpp/test.csv
 
+# C++ version using templates
 cplusplusUsingTemplates:
 	cd CppUsingTemplates ; \
-	g++ -o g++ -o 1efilter 1efilter.cc  ; \
+	$(CPP) -o 1efilter 1efilter.cc  ; \
 	./1efilter > test.csv
 
 testcplusplusUsingTemplates: cplusplusUsingTemplates
-	python3 test.py cppUsingTemplates CppUsingTemplates/test.csv
+	$(PYTHON) test.py cppUsingTemplates CppUsingTemplates/test.csv
 
+# C version
+SF1eFilter.o:
+	cd C ; \
+	$(CC) -c -o SF1eFilter.o SF1eFilter.c $(CFLAGS)
+
+c: SF1eFilter.o 
+	cd C ; \
+    $(CC) -o 1eurofilter SF1eFilter.o test.c ; \
+	./1eurofilter > test.csv
+
+testc: c
+	$(PYTHON) test.py Cversion C/test.csv
+
+# Python version
 testpython: 
 	cd python ; \
-	python3 OneEuroFilterTest.py > test.csv ; \
+	$(PYTHON) OneEuroFilterTest.py > test.csv ; \
 	cd .. ; \
-	python3 test.py python python/test.csv
+	$(PYTHON) test.py python python/test.csv

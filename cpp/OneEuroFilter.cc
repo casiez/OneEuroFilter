@@ -171,10 +171,7 @@ public:
 
 // -----------------------------------------------------------------
 
-int
-main(int argc, char **argv) {
-
-  double duration = 10.0 ; // seconds
+int main(int argc, char **argv) {
 
   double frequency = 120 ; // Hz
   double mincutoff = 1.0 ; // Hz
