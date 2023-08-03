@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-I.
 PYTHON=python3
 
-all: testcplusplus testcplusplusUsingTemplates testc testpython testJava
+all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript
 
 # C++ version original
 cplusplus:
@@ -51,3 +51,11 @@ javaVersion:
 
 testJava: javaVersion
 	$(PYTHON) test.py java java/test.csv
+
+# Javascript
+javascriptVersion:
+	cd javascript ; \
+	node test.js > test.csv
+
+testJavascript: javascriptVersion
+	$(PYTHON) test.py javascript javascript/test.csv
