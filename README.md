@@ -1,6 +1,6 @@
 # 1€ filter
 
-Provides implementations for the [1€ filter](https://gery.casiez.net/1euro/), 
+Provides implementations for the [1€ filter](https://gery.casiez.net/1euro/)
 
 The 1€ filter ("one Euro filter") is a simple algorithm to filter noisy signals for high precision and responsiveness. It uses a first order low-pass filter with an adaptive cutoff frequency: at low speeds, a low cutoff stabilizes the signal by reducing jitter, but as speed increases, the cutoff is increased to reduce lag. The algorithm is easy to implement, uses very few resources, and with two easily understood parameters, it is easy to tune. In a comparison with other filters, the 1€ filter has less lag using a reference amount of jitter reduction.
 

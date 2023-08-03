@@ -1,4 +1,4 @@
-all: testcplusplus testpython
+all: testcplusplus testcplusplusUsingTemplates testpython
 
 cplusplus:
 	cd cpp ; \
@@ -14,7 +14,7 @@ cplusplusUsingTemplates:
 	./1efilter > test.csv
 
 testcplusplusUsingTemplates: cplusplusUsingTemplates
-	python3 test.py cpp CppUsingTemplates/test.csv
+	python3 test.py cppUsingTemplates CppUsingTemplates/test.csv
 
 testpython: 
 	cd python ; \
