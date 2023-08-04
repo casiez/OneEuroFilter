@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-I.
 PYTHON=python3
 
-all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript
+all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript
 
 # C++ version original
 cplusplus:
@@ -59,3 +59,14 @@ javascriptVersion:
 
 testJavascript: javascriptVersion
 	$(PYTHON) test.py javascript javascript/test.csv
+
+# Typescript
+
+typeScriptVersion:
+	cd typescript ; \
+	npm install ; \
+	tsc ; \
+	node dist/test.js > test.csv
+
+testTypescript: typeScriptVersion
+	$(PYTHON) test.py typescript typescript/test.csv

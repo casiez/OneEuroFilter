@@ -13,6 +13,8 @@ RUN apt-get update && apt-get install -y \
 	python3-pip \
 	g++ \
 	default-jdk \
-	nodejs
+	nodejs \
+	npm \
+	node-typescript
 
 RUN pip install pandas argparse --break-system-packages

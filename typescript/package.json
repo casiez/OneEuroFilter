@@ -1,0 +1,25 @@
+{
+  "name": "1eurofilter",
+  "version": "1.0.0",
+  "description": "Algorithm to filter noisy signals for high precision and responsiveness.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "author": "Géry Casiez and Alix Goguey",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/casiez/OneEuroFilter/typescript"
+  },
+  "keywords": [
+    "1 euro filter",
+    "1€ filter",
+    "filtering",
+    "noise"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.4.7"
+  }
+}
