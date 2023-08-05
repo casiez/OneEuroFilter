@@ -3,7 +3,7 @@ import {OneEuroFilter} from './OneEuroFilter'
 let frequency = 120 ; // Hz
 let mincutoff = 1.0 ; // Hz
 let beta = 0.1 ;      
-let dcutoff = 1.0 ; 
+let dcutoff = 1.0 ;
   
 console.log("timestamp,noisy,filtered");
 
