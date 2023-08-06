@@ -6,9 +6,13 @@ PYTHON=python3
 all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript
 
 # C++ version original
-cplusplus:
+OneEuroFilter.o:
 	cd cpp ; \
-	$(CPP) -o OneEuroFilterCpp OneEuroFilter.cc ; \
+	$(CPP) -c -o OneEuroFilter.o OneEuroFilter.cpp 
+
+cplusplus: OneEuroFilter.o
+	cd cpp ; \
+	$(CPP) -o OneEuroFilterCpp OneEuroFilter.o Test.cpp ; \
 	./OneEuroFilterCpp > test.csv
 
 testcplusplus: cplusplus
