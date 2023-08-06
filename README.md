@@ -16,19 +16,19 @@ See more on the [1€ filter homepage](https://gery.casiez.net/1euro/) for detai
 
 ```
 @inproceedings{10.1145/2207676.2208639,
-author = {Casiez, G\'{e}ry and Roussel, Nicolas and Vogel, Daniel},
-title = {1 € Filter: A Simple Speed-Based Low-Pass Filter for Noisy Input in Interactive Systems},
-year = {2012},
-isbn = {9781450310154},
-publisher = {Association for Computing Machinery},
-address = {New York, NY, USA},
-url = {https://doi.org/10.1145/2207676.2208639},
-doi = {10.1145/2207676.2208639},
-pages = {2527–2530},
-numpages = {4},
-keywords = {noise, jitter, lag, precision, filtering, responsiveness, signal},
-location = {Austin, Texas, USA},
-series = {CHI '12}
+    author = {Casiez, G\'{e}ry and Roussel, Nicolas and Vogel, Daniel},
+    title = {1 € Filter: A Simple Speed-Based Low-Pass Filter for Noisy Input in Interactive Systems},
+    year = {2012},
+    isbn = {9781450310154},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2207676.2208639},
+    doi = {10.1145/2207676.2208639},
+    pages = {2527–2530},
+    numpages = {4},
+    keywords = {noise, jitter, lag, precision, filtering, responsiveness, signal},
+    location = {Austin, Texas, USA},
+    series = {CHI '12}
 }
 ```
 
