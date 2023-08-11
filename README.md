@@ -7,7 +7,7 @@ The 1€ filter ("one Euro filter") is a simple algorithm to filter noisy signal
 
 See more on the [1€ filter homepage](https://gery.casiez.net/1euro/) for details on how to tune the parameters and try the [on-line interactive version](https://gery.casiez.net/1euro/InteractiveDemo/).
 
-## What to contribute?
+## Want to contribute?
 
 1. [Fork](https://github.com/casiez/OneEuroFilter/fork) the repo.
 1. Create a folder with your implementation and add the files for your implementation.
