@@ -1,3 +1,4 @@
+![Status of the tests](https://github.com/casiez/OneEuroFilter/blob/main/.github/workflows/tests.yml/badge.svg)
 # 1€ filter
 
 Provides implementations for the [1€ filter](https://gery.casiez.net/1euro/)
@@ -6,6 +7,14 @@ The 1€ filter ("one Euro filter") is a simple algorithm to filter noisy signal
 
 See more on the [1€ filter homepage](https://gery.casiez.net/1euro/) for details on how to tune the parameters and try the [on-line interactive version](https://gery.casiez.net/1euro/InteractiveDemo/).
 
+## What to contribute?
+
+1. [Fork](https://github.com/casiez/OneEuroFilter/fork) the repo.
+1. Create a folder with your implementation and add the files for your implementation.
+1. Create a file that can be executed to output in a console the result of the filtering for the ground truth. See the existing files as examples.
+1. Update [docker/Dokerfile](docker/Dokerfile) to install what could be missing to compile your code.
+1. Update [Makefile](Makefile) to compile and run the test for your implementation .
+1. Create a pool request.
 
 ## Ground truth data
 [groundTruth.csv](groundTruth.csv) has been generated using [this version of the C++ implementation](https://github.com/casiez/OneEuroFilter/blob/56126d84fd9107b4a8942deb5785a854730f404c/cpp/OneEuroFilter.cc), with code in the main to generate random noisy data and filter it. ```groundTruth.csv``` is used to check other implementations.
