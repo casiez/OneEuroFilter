@@ -16,7 +16,7 @@ if not(os.path.isfile(args.filename)):
     print("%s does not exist"%args.filename, file=sys.stderr)
     sys.exit()
 
-df = pandas.read_csv('groundTruth.csv')
+df = pandas.read_csv('../groundTruth.csv')
 df2 = pandas.read_csv(args.filename)
 
 problem = False

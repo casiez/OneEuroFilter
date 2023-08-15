@@ -1,0 +1,17 @@
+name: Test cpp
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: gcc:latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: make
+      run: cd cpp ; make
