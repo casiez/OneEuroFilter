@@ -1,4 +1,5 @@
-![Status of the tests](https://github.com/casiez/OneEuroFilter/blob/main/.github/workflows/tests.yml/badge.svg)
+[![Tests](https://github.com/casiez/OneEuroFilter/actions/workflows/tests.yml/badge.svg)](https://github.com/casiez/OneEuroFilter/actions/workflows/tests.yml)
+
 # 1€ filter
 
 Provides implementations for the [1€ filter](https://gery.casiez.net/1euro/)
