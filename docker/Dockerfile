@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
 	python3 \
 	python3-pip \
 	g++ \
-	default-jdk \
+	openjdk-17-jdk \
 	nodejs \
 	npm \
 	node-typescript
