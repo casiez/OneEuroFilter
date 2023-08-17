@@ -9,7 +9,8 @@ on:
 jobs:
   build:
 
-    runs-on: casiez/oneeurofilter
+    runs-on: ubuntu-latest
+    container: casiez/oneeurofilter
 
     steps:
     - uses: actions/checkout@v3
