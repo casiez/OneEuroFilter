@@ -1,4 +1,7 @@
 [![Tests](https://github.com/casiez/OneEuroFilter/actions/workflows/tests.yml/badge.svg)](https://github.com/casiez/OneEuroFilter/actions/workflows/tests.yml)
+[![PyPI Version](https://img.shields.io/pypi/v/OneEuroFilter)](https://pypi.org/project/OneEuroFilter/)
+[![NPM Version](https://badge.fury.io/js/1eurofilter.svg?style=flat)](https://npmjs.org/package/1eurofilter)
+[![arduino-library-badge](https://www.ardu-badge.com/badge/1euroFilter.svg?)](https://www.ardu-badge.com/1euroFilter)
 
 # 1€ filter
 
