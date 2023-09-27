@@ -34,7 +34,7 @@ class LowPassFilter {
   private s : number;
   private initialized : boolean;
   
-  private setAlpha(alpha : number) {
+  public setAlpha(alpha : number) {
     if (alpha<=0.0 || alpha>1.0) 
       console.log("alpha should be in (0.0., 1.0]");
     this.a = alpha;
@@ -99,23 +99,27 @@ export class OneEuroFilter {
     return 1.0 / (1.0 + tau/te);
   }
 
-  private setFrequency(f : number) {
+  public setFrequency(f : number) {
     if (f<=0) console.log("freq should be >0") ;
     this.freq = f;
   }
 
-  private setMinCutoff(mc : number) {
+  public setMinCutoff(mc : number) {
     if (mc<=0) console.log("mincutoff should be >0");
     this.mincutoff = mc;
+    if (this.x != undefined)
+      this.x.setAlpha(this.alpha(mc));
   }
 
-  private setBeta(b : number) {
+  public setBeta(b : number) {
     this.beta = b;
   }
 
-  private setDerivateCutoff(dc : number) {
+  public setDerivateCutoff(dc : number) {
     if (dc<=0) console.log("dcutoff should be >0") ;
     this.dcutoff = dc;
+    if (this.dx != undefined)
+      this.dx.setAlpha(this.alpha(dc));
   }
 
   constructor(freq : number, mincutoff : number = 1.0, beta : number = 0.0, dcutoff : number = 1.0) {
