@@ -107,8 +107,6 @@ export class OneEuroFilter {
   public setMinCutoff(mc : number) {
     if (mc<=0) console.log("mincutoff should be >0");
     this.mincutoff = mc;
-    if (this.x != undefined)
-      this.x.setAlpha(this.alpha(mc));
   }
 
   public setBeta(b : number) {
@@ -118,8 +116,6 @@ export class OneEuroFilter {
   public setDerivateCutoff(dc : number) {
     if (dc<=0) console.log("dcutoff should be >0") ;
     this.dcutoff = dc;
-    if (this.dx != undefined)
-      this.dx.setAlpha(this.alpha(dc));
   }
 
   constructor(freq : number, mincutoff : number = 1.0, beta : number = 0.0, dcutoff : number = 1.0) {

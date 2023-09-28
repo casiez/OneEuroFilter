@@ -1,6 +1,6 @@
 {
   "name": "1eurofilter",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Algorithm to filter noisy signals for high precision and responsiveness.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
