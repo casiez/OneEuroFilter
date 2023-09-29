@@ -1,3 +1,6 @@
+[![PyPI Version](https://img.shields.io/pypi/v/OneEuroFilter)](https://pypi.org/project/OneEuroFilter/)
+[![Downloads](https://static.pepy.tech/badge/OneEuroFilter)](https://pepy.tech/project/OneEuroFilter)
+
 # 1€ filter
 
 Provides a python implementation for the [1€ filter](https://gery.casiez.net/1euro/).
