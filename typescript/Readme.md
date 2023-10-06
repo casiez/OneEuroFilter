@@ -1,3 +1,6 @@
+[![NPM Version](https://badge.fury.io/js/1eurofilter.svg?style=flat)](https://npmjs.org/package/1eurofilter)
+[![npm downloads](https://img.shields.io/npm/dm/1eurofilter.svg?style=flat-square)](https://npm-stat.com/charts.html?package=1eurofilter)
+
 # 1€ filter typescript version
 
 Provides a typescript implementation for the [1€ filter](https://gery.casiez.net/1euro/).
