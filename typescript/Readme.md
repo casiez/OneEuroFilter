@@ -28,6 +28,107 @@ let filtered = f.filter(noisyvalue, timestamp);
 
 ```
 
+
+## Doc
+
+### constructor
+
+• **new OneEuroFilter**(`freq`, `mincutoff`, `beta`, `dcutoff`)
+
+Constructs a 1 euro filter.
+
+#### Parameters
+
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `freq` | `number` | `undefined` | An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available. |
+| `mincutoff` | `number` | `1.0` | Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter. |
+| `beta` | `number` | `0.0` | Parameter to reduce latency (> 0). |
+| `dcutoff` | `number` | `1.0` | Used to filter the derivates. 1 Hz by default. Change this parameter if you know what you are doing. |
+
+
+### filter
+
+▸ **filter**(`value`, `timestamp`): `number`
+
+Returns the filtered value.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `number` | Noisy value to filter |
+| `timestamp` | `number` | (optional) timestamp in seconds |
+
+### reset
+
+▸ **reset**(): `void`
+
+Resets the internal state of the filter.
+
+### setBeta
+
+▸ **setBeta**(`beta`): `void`
+
+Sets the Beta parameter
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `beta` | `number` | Parameter to reduce latency (> 0). |
+
+### setDerivateCutoff
+
+▸ **setDerivateCutoff**(`dcutoff`): `void`
+
+Sets the dcutoff parameter
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `dcutoff` | `number` | Used to filter the derivates. 1 Hz by default. Change this parameter if you know what you are doing. |
+
+### setFrequency
+
+▸ **setFrequency**(`freq`): `void`
+
+Sets the frequency of the signal
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `freq` | `number` | An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available. |
+
+### setMinCutoff
+
+▸ **setMinCutoff**(`mincutoff`): `void`
+
+Sets the filter min cutoff frequency
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `mincutoff` | `number` | Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter. |
+
+### setParameters
+
+▸ **setParameters**(`freq`, `mincutoff`, `beta`): `void`
+
+Sets the parameters of the 1 euro filter.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `freq` | `number` | An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available. |
+| `mincutoff` | `number` | Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter. |
+| `beta` | `number` | Parameter to reduce latency (> 0). |
+
+
 ## Related publication
 
 [![DOI](https://img.shields.io/badge/doi-10.1145%2F2207676.2208639-blue)](https://doi.org/10.1145/2207676.2208639)

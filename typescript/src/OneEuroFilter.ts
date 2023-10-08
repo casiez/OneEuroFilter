@@ -99,24 +99,70 @@ export class OneEuroFilter {
     return 1.0 / (1.0 + tau/te);
   }
 
-  public setFrequency(f : number) {
-    if (f<=0) console.log("freq should be >0") ;
-    this.freq = f;
+
+  /**
+   * Sets the frequency of the signal
+   * 
+   * @param freq An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available.
+   */
+
+  public setFrequency(freq : number) {
+    if (freq<=0) console.log("freq should be >0") ;
+    this.freq = freq;
   }
 
-  public setMinCutoff(mc : number) {
-    if (mc<=0) console.log("mincutoff should be >0");
-    this.mincutoff = mc;
+  /**
+   * Sets the filter min cutoff frequency
+   * 
+   * @param mincutoff Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter.
+   */ 
+  public setMinCutoff(mincutoff : number) {
+    if (mincutoff<=0) console.log("mincutoff should be >0");
+    this.mincutoff = mincutoff;
   }
 
-  public setBeta(b : number) {
-    this.beta = b;
+  /**
+   * Sets the Beta parameter
+   * 
+   * @param beta Parameter to reduce latency (> 0).
+   */ 
+  public setBeta(beta : number) {
+    this.beta = beta;
   }
 
-  public setDerivateCutoff(dc : number) {
-    if (dc<=0) console.log("dcutoff should be >0") ;
-    this.dcutoff = dc;
+  /**
+   * Sets the dcutoff parameter
+   * 
+   * @param dcutoff Used to filter the derivates. 1 Hz by default. Change this parameter if you know what you are doing.
+   */ 
+  public setDerivateCutoff(dcutoff : number) {
+    if (dcutoff<=0) console.log("dcutoff should be >0") ;
+    this.dcutoff = dcutoff;
   }
+
+/**
+   * Sets the parameters of the 1 euro filter.
+   *
+   * @param freq - An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available.
+   * @param mincutoff - Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter.
+   * @param beta - Parameter to reduce latency (> 0).
+   *
+   */
+  public setParameters(freq : number, mincutoff : number, beta : number) {
+    this.setFrequency(freq);
+    this.setMinCutoff(mincutoff);
+    this.setBeta(beta);
+  }
+
+/**
+   * Constructs a 1 euro filter.
+   *
+   * @param freq - An estimate of the frequency in Hz of the signal (> 0), if timestamps are not available.
+   * @param mincutoff - Min cutoff frequency in Hz (> 0). Lower values allow to remove more jitter.
+   * @param beta - Parameter to reduce latency (> 0).
+   * @param dcutoff - Used to filter the derivates. 1 Hz by default. Change this parameter if you know what you are doing.
+   *
+   */
 
   constructor(freq : number, mincutoff : number = 1.0, beta : number = 0.0, dcutoff : number = 1.0) {
     this.setFrequency(freq) ;
@@ -128,11 +174,24 @@ export class OneEuroFilter {
     this.lasttime = undefined ;
   }
 
+  /**
+   * Resets the internal state of the filter.
+   */
+
   public reset() {
     this.x.reset();
     this.dx.reset();
     this.lasttime = undefined;
   }
+
+  /**
+   * Returns the filtered value.
+   *
+   * @param value - Noisy value to filter
+   * @param timestamp - (optional) timestamp in seconds
+   * @returns The filtered value
+   *
+   */
 
   public filter(value : number, timestamp : number | undefined) : number {
     // update the sampling frequency based on timestamps
