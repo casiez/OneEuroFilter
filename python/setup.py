@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='OneEuroFilter',  
-     version='0.1.0',
+     version='0.2.0',
      author="Géry Casiez",
      author_email="gery.casiez@gmail.com",
      description="1€ filter (One Euro Filter)",
