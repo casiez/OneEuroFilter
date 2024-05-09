@@ -41,6 +41,7 @@ for (index, row), (index2, row2) in zip(df.iterrows(), df2.iterrows()):
         break
 
 if problem:
-    print("Problem with %s checking"%args.implementation, file=sys.stderr)
+    print("::error Problem with %s checking"%args.implementation, file=sys.stderr)
+    sys.exit(1)
 else:
     print("\n>>>>>> %s implementation looks good. <<<<<<\n"%args.implementation)
