@@ -119,7 +119,7 @@ OneEuroFilter::OneEuroFilter(double freq,
 
 double OneEuroFilter::filter(double value, TimeStamp timestamp) {
   // update the sampling frequency based on timestamps
-  if (lasttime!=UndefinedTime && timestamp!=UndefinedTime)
+  if (lasttime!=UndefinedTime && timestamp!=UndefinedTime && timestamp>lasttime)
     freq = 1.0 / (timestamp-lasttime) ;
   lasttime = timestamp ;
   // estimate the current variation per second 
