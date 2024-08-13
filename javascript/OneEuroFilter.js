@@ -125,7 +125,7 @@ export class OneEuroFilter {
 
   filter(value, timestamp=undefined) {
     // update the sampling frequency based on timestamps
-    if (this.lasttime!=undefined && timestamp!=undefined)
+    if (this.lasttime!=undefined && timestamp!=undefined && timestamp > this.lasttime)
       this.freq = 1.0 / (timestamp-this.lasttime) ;
     this.lasttime = timestamp ;
     // estimate the current variation per second 

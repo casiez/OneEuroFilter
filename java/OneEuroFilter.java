@@ -159,7 +159,7 @@ public class OneEuroFilter {
 
     double filter(double value, double timestamp) throws Exception {
         // update the sampling frequency based on timestamps
-        if (lasttime != UndefinedTime && timestamp != UndefinedTime) {
+        if (lasttime != UndefinedTime && timestamp != UndefinedTime && timestamp > lasttime) {
             freq = 1.0 / (timestamp - lasttime);
         }
         

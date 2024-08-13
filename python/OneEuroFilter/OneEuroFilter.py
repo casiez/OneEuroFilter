@@ -124,7 +124,7 @@ class OneEuroFilter(object):
         """
 
         # ---- update the sampling frequency based on timestamps
-        if self.__lasttime and timestamp:
+        if self.__lasttime and timestamp and timestamp>self.__lasttime:
             self.__freq = 1.0 / (timestamp-self.__lasttime)
         self.__lasttime = timestamp
         # ---- estimate the current variation per second

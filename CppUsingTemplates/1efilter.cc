@@ -56,7 +56,7 @@ struct one_euro_filter {
 	T operator()(T x, timestamp_t t = -1) {
 		T dx = 0;
 		
-		if(last_time_ != -1 && t != -1 && t != last_time_) {
+		if(last_time_ != -1 && t != -1 && t != last_time_ && t > last_time_) {
 			freq = 1.0 / (t - last_time_);
 		}
 		last_time_ = t;

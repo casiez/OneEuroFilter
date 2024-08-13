@@ -112,7 +112,7 @@ float SF1eFilterDo(SF1eFilter *filter, float x)
 
 float SF1eFilterDoAtTime(SF1eFilter *filter, float x, double timestamp)
 {
-	if(filter->lastTime != 0) {
+	if(filter->lastTime != 0 && timestamp > filter->lastTime) {
 		filter->frequency = 1.0f / (timestamp - filter->lastTime);
 	}
 	filter->lastTime = timestamp;
