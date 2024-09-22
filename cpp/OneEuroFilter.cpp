@@ -44,7 +44,11 @@
 
 void LowPassFilter::setAlpha(double alpha) {
   if (alpha<=0.0 || alpha>1.0)
+#ifdef __EXCEPTIONS
     throw std::range_error("alpha should be in (0.0., 1.0] and its current value is " + std::to_string(alpha)) ;
+#else
+    alpha = 0.5 ;
+#endif
   a = alpha ;
 }
 
@@ -93,12 +97,23 @@ double OneEuroFilter::alpha(double cutoff) {
 }
 
 void OneEuroFilter::setFrequency(double f) {
-  if (f<=0) throw std::range_error("freq should be >0") ;
+  if (f<=0)
+#ifdef __EXCEPTIONS
+    throw std::range_error("freq should be >0") ;
+#else
+    f= 120 ;  // set to 120Hz default
+#endif
+
   freq = f ;
 }
 
 void OneEuroFilter::setMinCutoff(double mc) {
-  if (mc<=0) throw std::range_error("mincutoff should be >0") ;
+  if (mc<=0)
+#ifdef __EXCEPTIONS
+    throw std::range_error("mincutoff should be >0") ;
+#else
+    mc = 1.0 ;
+#endif
   mincutoff = mc ;
 }
 
@@ -107,7 +122,12 @@ void OneEuroFilter::setBeta(double b) {
 }
 
 void OneEuroFilter::setDerivateCutoff(double dc) {
-  if (dc<=0) throw std::range_error("dcutoff should be >0") ;
+  if (dc<=0)
+#ifdef __EXCEPTIONS
+    throw std::range_error("dcutoff should be >0") ;
+#else
+    dc = 1.0 ;
+#endif
   dcutoff = dc ;
 }
 
