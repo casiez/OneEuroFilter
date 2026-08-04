@@ -1,0 +1,21 @@
+# Standalone crate (empty workspace table so it is never absorbed into a
+# parent Cargo workspace when checked out inside one).
+[workspace]
+
+[package]
+name = "one_euro_filter"
+version = "1.0.0"
+edition = "2021"
+description = "Rust implementation of the 1€ filter, checked against the reference ground truth"
+license = "BSD-3-Clause"
+
+[[bin]]
+name = "one_euro_filter"
+path = "src/main.rs"
+
+[lib]
+name = "one_euro_filter"
+path = "src/lib.rs"
+
+[profile.release]
+opt-level = 3

@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install -y \
 	openjdk-17-jdk \
 	nodejs \
 	npm \
-	node-typescript
+	node-typescript \
+	cargo \
+	rustc
 
 RUN pip install pandas argparse --break-system-packages
