@@ -1,4 +1,4 @@
-all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript
+all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript testRust
 
 # C++ version original
 testcplusplus:
@@ -27,3 +27,7 @@ testJavascript:
 # Typescript
 testTypescript:
 	cd typescript ; make
+
+# Rust
+testRust:
+	cd rust ; make
