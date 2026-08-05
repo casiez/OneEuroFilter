@@ -18,7 +18,7 @@ See more on the [1€ filter homepage](https://gery.casiez.net/1euro/) for detai
 1. Create a file that can be executed to output in a console the result of the filtering for the ground truth. See the existing files as examples. Create a Makefile to test your implementation (see the other examples).
 1. Update [docker/Dokerfile](docker/Dockerfile) to install what could be missing to compile your code.
 1. Update [Makefile](Makefile) to call your makefile.
-1. Create a pool request.
+1. Create a pull request.
 
 ## Ground truth data
 [groundTruth.csv](groundTruth.csv) has been generated using [this version of the C++ implementation](https://github.com/casiez/OneEuroFilter/blob/56126d84fd9107b4a8942deb5785a854730f404c/cpp/OneEuroFilter.cc), with code in the main to generate random noisy data and filter it. ```groundTruth.csv``` is used to check other implementations.

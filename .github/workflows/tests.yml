@@ -10,10 +10,11 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-    container: casiez/oneeurofilter
 
     steps:
     - uses: actions/checkout@v3
-    - name: make
-      run: make
+    - name: Build Docker image
+      run: docker build -t oneeurofilter ./docker
+    - name: Run tests
+      run: docker run --rm --mount type=bind,source=${{ github.workspace }},target=/mnt/1euro oneeurofilter bash -c "cd /mnt/1euro && make"
 
