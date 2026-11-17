@@ -10,9 +10,7 @@ namespace OneEuroFilter
     public sealed class OneEuroFilter3
     {
         private const float TwoPi = 2f * Mathf.PI;
-
-        private Vector3 previousRaw;
-
+        
         public bool IsReady { get; private set; }
         public Vector3 Value { get; private set; }
         public Vector3 Derivative { get; private set; }
@@ -25,7 +23,6 @@ namespace OneEuroFilter
             IsReady = false;
             Value = Vector3.zero;
             Derivative = Vector3.zero;
-            previousRaw = Vector3.zero;
         }
 
         /// <summary>
@@ -63,7 +60,6 @@ namespace OneEuroFilter
             {
                 IsReady = true;
                 Value = x;
-                previousRaw = x;
                 Derivative = Vector3.zero;
 
                 return Value;
@@ -74,7 +70,7 @@ namespace OneEuroFilter
                 return Value;
             }
 
-            Vector3 rawDerivative = (x - previousRaw) / dt;
+            Vector3 rawDerivative = (x - Value) / dt;
 
             if (IsFinite(rawDerivative) == false)
             {
@@ -108,7 +104,6 @@ namespace OneEuroFilter
                 return Value;
             }
 
-            previousRaw = x;
             Derivative = smoothedDerivative;
             Value = filtered;
 

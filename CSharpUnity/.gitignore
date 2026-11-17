@@ -1,6 +1,13 @@
 # Unity metadata
 *.meta
 
+# Generated test files
+GroundTruthRunner.exe
+test.csv
+
 # macOS
 .DS_Store
 **/.DS_Store
+
+# Rider
+.idea/
