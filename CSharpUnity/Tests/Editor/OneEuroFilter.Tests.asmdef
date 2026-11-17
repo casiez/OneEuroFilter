@@ -1,0 +1,16 @@
+{
+  "name": "OneEuroFilter.Tests",
+  "references": [
+    "OneEuroFilter"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "overrideReferences": true,
+  "precompiledReferences": [
+    "nunit.framework.dll"
+  ]
+}
