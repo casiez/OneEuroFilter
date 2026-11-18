@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -y \
 	npm \
 	node-typescript \
 	cargo \
-	rustc
+	rustc \
+    mono-mcs \
+    mono-runtime
 
 RUN pip install pandas argparse --break-system-packages

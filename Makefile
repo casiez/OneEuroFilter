@@ -31,3 +31,8 @@ testTypescript:
 # Rust
 testRust:
 	cd rust ; make
+	
+# Unity C#
+.PHONY: testCSharpUnity
+testCSharpUnity:
+	$(MAKE) -C CSharpUnity
