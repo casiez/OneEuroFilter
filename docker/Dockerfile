@@ -1,4 +1,4 @@
-FROM debian:bookworm-slim
+FROM debian:trixie-slim
 
 ARG BUILD_DATE
 
@@ -9,16 +9,26 @@ LABEL maintainer="Géry Casiez <gery.casiez@univ-lille.fr>" \
 
 RUN apt-get update && apt-get install -y \
 	sudo \
-	python3 \
+	curl \
+	wget \
+	python3-full \
 	python3-pip \
 	g++ \
-	openjdk-17-jdk \
+	openjdk-21-jdk \
 	nodejs \
 	npm \
 	node-typescript \
 	cargo \
 	rustc \
-    mono-mcs \
-    mono-runtime
+	mono-mcs \
+	mono-runtime
 
-RUN pip install pandas argparse --break-system-packages
+# Version of node provided by Debian is too old, so we install a more recent version using n
+RUN npm install -g n
+RUN n 26.13.1
+
+RUN python3 -m venv /usr/local/python
+
+ENV PATH="/usr/local/python/bin:$PATH"
+
+RUN pip3 install pandas argparse --break-system-packages

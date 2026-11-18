@@ -1,4 +1,4 @@
-all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript testRust
+all: testcplusplus testcplusplusUsingTemplates testc testpython testJava testJavascript testTypescript testRust testCSharpUnity
 
 # C++ version original
 testcplusplus:
